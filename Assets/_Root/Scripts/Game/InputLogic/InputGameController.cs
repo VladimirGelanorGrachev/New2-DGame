@@ -16,7 +16,7 @@ namespace Game.InputLogic
             CarModel car)
         {
             _view = LoadView();
-            _view.Init(leftMove, rightMove, car._speed);
+            _view.Init(leftMove, rightMove, car._defaultSpeed);
         }
 
 

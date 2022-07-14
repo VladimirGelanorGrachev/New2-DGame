@@ -2,6 +2,7 @@ using Ui;
 using Game;
 using Profile;
 using UnityEngine;
+using Features.Shed;
 
 internal class MainController : BaseController
 {
@@ -11,6 +12,7 @@ internal class MainController : BaseController
     private MainMenuController _mainMenuController;
     private SettingsMenuController _settingsMenuController;
     private GameController _gameController;
+    private ShedController _shedController;
 
 
     public MainController(Transform placeForUi, ProfilePlayer profilePlayer)
@@ -25,6 +27,8 @@ internal class MainController : BaseController
     protected override void OnDispose()
     {
         _mainMenuController?.Dispose();
+        _settingsMenuController?.Dispose();
+        _shedController?.Dispose();
         _gameController?.Dispose();
 
         _profilePlayer.CurrentState.UnSubscribeOnChange(OnChangeGameState);
@@ -38,22 +42,33 @@ internal class MainController : BaseController
             case GameState.Start:
                 _mainMenuController = new MainMenuController(_placeForUi, _profilePlayer);
                 _settingsMenuController?.Dispose();
+                _shedController?.Dispose();
                 _gameController?.Dispose();
                 break;
             case GameState.Game:
                 _gameController = new GameController(_profilePlayer);
                 _settingsMenuController?.Dispose();
+                _shedController?.Dispose();
                 _mainMenuController?.Dispose();
                 break;
             case GameState.Settings:
                 _settingsMenuController = new SettingsMenuController(_placeForUi, _profilePlayer);
+                _shedController?.Dispose();
                 _mainMenuController?.Dispose();
+                _settingsMenuController?.Dispose();
+                break;
+            case GameState.Shed:
+                _shedController = new ShedController(_placeForUi, _profilePlayer);
+                _mainMenuController?.Dispose();
+                _settingsMenuController?.Dispose();
+                _gameController?.Dispose();
                 break;
 
             default:
                 _mainMenuController?.Dispose();
                 _gameController?.Dispose();
                 _settingsMenuController?.Dispose();
+                _shedController?.Dispose();
                 break;
         }
     }
