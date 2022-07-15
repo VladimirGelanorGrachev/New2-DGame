@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: cc7c0900b45e46d4bd60c41ef3e0893a, type: 3}
-  m_Name: AbilityItemConfig
+  m_Name: JumpHeightConfig
   m_EditorClassIdentifier: 
-  _itemConfig: {fileID: 11400000, guid: b597b6b04f8d34d0bb36337f81f45ec0, type: 2}
-  <Type>k__BackingField: 1
-  <Projectile>k__BackingField: {fileID: 4053592497838757858, guid: 04f28962bd97c144db0a53e0d1d298fb, type: 3}
-  <Value>k__BackingField: 500
+  _itemConfig: {fileID: 11400000, guid: a7c86d5fb0e61cf4e998ad5ebc0a2869, type: 2}
+  <Type>k__BackingField: 2
+  <Projectile>k__BackingField: {fileID: 2798751012173450245, guid: 14e1527e57c71604a8175e6cad6cb8a3, type: 3}
+  <Value>k__BackingField: 300

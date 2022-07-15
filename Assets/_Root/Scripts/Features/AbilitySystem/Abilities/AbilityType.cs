@@ -4,5 +4,7 @@ namespace Features.AbilitySystem.Abilities
     {
         None,
         Gun,
+        Jump,
+        Nitro
     }
 }

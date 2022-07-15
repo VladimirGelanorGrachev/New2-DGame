@@ -5,20 +5,25 @@ namespace Game.Car
     internal class CarModel: IUpgradable
     {
         public readonly float _defaultSpeed;
-        public readonly float _jumpHeight;
+        public readonly float _defaultJumpHeight;
 
         public float Speed { get; set; }
+
+        public float JumpHeight { get; set; }
 
 
         public CarModel(float speed, float jumpHeight)
         {
             _defaultSpeed = speed;
             Speed = speed;
-            _jumpHeight = jumpHeight;
+            _defaultJumpHeight = jumpHeight;
+            JumpHeight = jumpHeight;
         }
 
-        public void Restore() =>
+        public void Restore()
+        {
             Speed = _defaultSpeed;
-
+            JumpHeight = _defaultJumpHeight;
+        }
     }
 }

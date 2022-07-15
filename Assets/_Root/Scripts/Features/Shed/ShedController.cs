@@ -51,11 +51,6 @@ namespace Features.Shed
             return repository;
         }
 
-        private void AddRepository(UpgradeHandlersRepository repository)
-        {
-            throw new NotImplementedException();
-        }
-
         private InventoryController CreateInventoryController(Transform placeForUi)
         {
             var inventoryController = new InventoryController(placeForUi, _profilePlayer.Inventory);

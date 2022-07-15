@@ -5,7 +5,7 @@ namespace Game.InputLogic
 {
     internal class InputKeyboard : BaseInputView
     {       
-        [SerializeField] private float _inputMultiplier = 0.01f;
+        [SerializeField] private float _inputMultiplier = 0.5f;
 
         private void Start() =>
             UpdateManager.SubscribeToUpdate(Move);

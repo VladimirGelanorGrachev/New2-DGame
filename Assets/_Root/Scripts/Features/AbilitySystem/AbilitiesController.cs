@@ -46,12 +46,7 @@ namespace Features.AbilitySystem
             AddRepository(repository);
 
             return repository;
-        }
-
-        private void AddRepository(AbilitiesRepository repository)
-        {
-            throw new NotImplementedException();
-        }
+        }       
 
         private AbilitiesView LoadView(Transform placeForUi)
         {

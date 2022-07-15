@@ -45,18 +45,19 @@ internal class MainController : BaseController
                 _shedController?.Dispose();
                 _gameController?.Dispose();
                 break;
+
             case GameState.Game:
-                _gameController = new GameController(_profilePlayer);
-                _settingsMenuController?.Dispose();
+                _gameController = new GameController(_placeForUi, _profilePlayer);
                 _shedController?.Dispose();
                 _mainMenuController?.Dispose();
                 break;
+
             case GameState.Settings:
                 _settingsMenuController = new SettingsMenuController(_placeForUi, _profilePlayer);
                 _shedController?.Dispose();
-                _mainMenuController?.Dispose();
-                _settingsMenuController?.Dispose();
+                _mainMenuController?.Dispose();                
                 break;
+
             case GameState.Shed:
                 _shedController = new ShedController(_placeForUi, _profilePlayer);
                 _mainMenuController?.Dispose();

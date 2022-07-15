@@ -48,12 +48,7 @@ namespace Features.Inventory
             AddRepository(repository);
 
             return repository;
-        }
-
-        private void AddRepository(ItemsRepository repository)
-        {
-            throw new NotImplementedException();
-        }
+        }       
 
         private InventoryView LoadView(Transform placeForUi)
         {
