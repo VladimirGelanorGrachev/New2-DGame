@@ -3,20 +3,17 @@ using UnityEngine;
 
 internal class EntryPoint : MonoBehaviour
 {
-    [Header("Initial Settings")]
-    [SerializeField] private float _speedCar;
-    [SerializeField] private float _jumpHeight;
-    [SerializeField] private GameState _initialState;
-
     [Header("Scene Objects")]
     [SerializeField] private Transform _placeForUi;
 
+    [Header("EntryPointSettings")]
+    [SerializeField] EntryPointSettings _settings;
+        
     private MainController _mainController;
-
 
     private void Start()
     {
-        var profilePlayer = new ProfilePlayer(_speedCar,_jumpHeight, _initialState);
+        var profilePlayer = new ProfilePlayer(_settings.SpeedCar,_settings.JumpHeight,_settings.InitialState);
         _mainController = new MainController(_placeForUi, profilePlayer);
     }
 
