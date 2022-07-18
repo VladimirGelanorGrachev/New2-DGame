@@ -14,24 +14,23 @@ namespace Services.Ads.UnityAds
 
         protected readonly string Id;
 
-
         protected UnityAdsPlayer(string id)
         {
             Id = id;
             Advertisement.AddListener(this);
         }
 
-
         public void Play()
         {
             Load();
             OnPlaying();
             Load();
+
+            Log("Play");
         }
 
         protected abstract void OnPlaying();
         protected abstract void Load();
-
 
         void IUnityAdsListener.OnUnityAdsReady(string placementId)
         {
@@ -53,7 +52,6 @@ namespace Services.Ads.UnityAds
             Log("Started");
             Started?.Invoke();
         }
-
         void IUnityAdsListener.OnUnityAdsDidFinish(string placementId, ShowResult showResult)
         {
             if (IsIdMy(placementId) == false)
@@ -77,7 +75,6 @@ namespace Services.Ads.UnityAds
                     break;
             }
         }
-
 
         private bool IsIdMy(string id) => Id == id;
 

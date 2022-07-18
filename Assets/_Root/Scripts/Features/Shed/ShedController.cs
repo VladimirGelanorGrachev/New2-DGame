@@ -10,8 +10,7 @@ using JetBrains.Annotations;
 namespace Features.Shed
 {
     internal interface IShedController
-    {
-    }
+    { }
 
     internal class ShedController : BaseController, IShedController
     {
@@ -20,7 +19,7 @@ namespace Features.Shed
 
         private readonly ShedView _view;
         private readonly ProfilePlayer _profilePlayer;
-        private readonly InventoryController _inventoryController;
+        private readonly InventoryContext _inventoryContext;
         private readonly UpgradeHandlersRepository _upgradeHandlersRepository;
 
 
@@ -34,13 +33,19 @@ namespace Features.Shed
             _profilePlayer
                 = profilePlayer ?? throw new ArgumentNullException(nameof(profilePlayer));
 
+            _inventoryContext = CreateInventoryContext(placeForUi, _profilePlayer.Inventory);
             _upgradeHandlersRepository = CreateRepository();
-            _inventoryController = CreateInventoryController(placeForUi);
             _view = LoadView(placeForUi);
 
             _view.Init(Apply, Back);
         }
+        private InventoryContext CreateInventoryContext(Transform placeForUi, IInventoryModel model)
+        {
+            var context = new InventoryContext(placeForUi, model);
+            AddContext(context);
 
+            return context;
+        }
 
         private UpgradeHandlersRepository CreateRepository()
         {
@@ -49,15 +54,7 @@ namespace Features.Shed
             AddRepository(repository);
 
             return repository;
-        }
-
-        private InventoryController CreateInventoryController(Transform placeForUi)
-        {
-            var inventoryController = new InventoryController(placeForUi, _profilePlayer.Inventory);
-            AddController(inventoryController);
-
-            return inventoryController;
-        }
+        }     
 
         private ShedView LoadView(Transform placeForUi)
         {
