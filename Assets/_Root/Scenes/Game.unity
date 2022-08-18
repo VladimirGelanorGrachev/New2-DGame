@@ -465,8 +465,8 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 1219474787}
-  - component: {fileID: 1219474788}
   - component: {fileID: 1219474789}
+  - component: {fileID: 1219474788}
   m_Layer: 0
   m_Name: Services
   m_TagString: Untagged
@@ -513,7 +513,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 1219474786}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1c25a214024898246897da8b4774f17d, type: 3}
+  m_Script: {fileID: 11500000, guid: 78d39602ed2c4894887fec7b62fbdf26, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   _adsService: {fileID: 205816524}
@@ -633,5 +633,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 8c1f1f3a311c471e921b56ebcc0f1a0c, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  _initialProfilePlayer: {fileID: 11400000, guid: 61a8abf8ae96b4ccf807ced955201581, type: 2}
   _placeForUi: {fileID: 1903552}
-  _settings: {fileID: 11400000, guid: 98798b4e47a0215459b92495896c39cc, type: 2}

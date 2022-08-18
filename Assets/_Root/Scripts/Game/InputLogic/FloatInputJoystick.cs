@@ -1,4 +1,3 @@
-using JoostenProductions;
 using UnityEngine;
 using UnityEngine.EventSystems;
 using UnityStandardAssets.CrossPlatformInput;

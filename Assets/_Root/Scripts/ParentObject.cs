@@ -2,7 +2,7 @@ using System;
 using System.Collections.Generic;
 using UnityEngine;
 
-internal class ParentObject : IDisposable
+internal abstract class ParentObject : IDisposable
 {
     private List<IDisposable> _disposableObjects;
     private List<GameObject> _gameObjects;

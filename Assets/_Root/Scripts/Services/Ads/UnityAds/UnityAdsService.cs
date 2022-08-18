@@ -17,6 +17,7 @@ namespace Services.Ads.UnityAds
         public IAdsPlayer BannerPlayer { get; private set; }
         public bool IsInitialized => Advertisement.isInitialized;
 
+
         private void Awake()
         {
             InitializeAds();
@@ -37,16 +38,20 @@ namespace Services.Ads.UnityAds
             BannerPlayer = CreateBanner();
         }
 
+
         private IAdsPlayer CreateInterstitial() =>
             _settings.Interstitial.Enabled
                 ? new InterstitialPlayer(_settings.Interstitial.Id)
                 : new StubPlayer("");
 
         private IAdsPlayer CreateRewarded() =>
-            new StubPlayer("");
+            _settings.Rewarded.Enabled
+                ? new RewardedAdsPlayer(_settings.Rewarded.Id)
+                : new StubPlayer("");
 
         private IAdsPlayer CreateBanner() =>
             new StubPlayer("");
+
 
         void IUnityAdsInitializationListener.OnInitializationComplete()
         {
@@ -56,6 +61,7 @@ namespace Services.Ads.UnityAds
 
         void IUnityAdsInitializationListener.OnInitializationFailed(UnityAdsInitializationError error, string message) =>
             Error($"Initialization Failed: {error.ToString()} - {message}");
+
 
         private void Log(string message) => Debug.Log(WrapMessage(message));
         private void Error(string message) => Debug.LogError(WrapMessage(message));

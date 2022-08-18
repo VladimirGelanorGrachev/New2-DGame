@@ -1,4 +1,3 @@
-using JoostenProductions;
 using UnityEngine;
 
 namespace Game.InputLogic

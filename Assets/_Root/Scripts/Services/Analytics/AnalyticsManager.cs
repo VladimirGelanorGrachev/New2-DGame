@@ -18,10 +18,10 @@ namespace Services.Analytics
             _services = new IAnalyticsService[]
             {
                 new UnityAnalyticsService()
-            };      
+            };
 
         public void SendGameStarted() =>
-           SendEvent("Game Started");
+            SendEvent("Game Started");
 
         public void SendTransaction(string productId, decimal amount, string currency)
         {
@@ -31,13 +31,17 @@ namespace Services.Analytics
             Log($"Sent transaction {productId}");
         }
 
+
         private void SendEvent(string eventName)
         {
             for (int i = 0; i < _services.Length; i++)
                 _services[i].SendEvent(eventName);
+
+            Log($"Sent {eventName}");
         }
 
+
         private void Log(string message) =>
-           Debug.Log($"[{GetType().Name}] {message}");
+            Debug.Log($"[{GetType().Name}] {message}");
     }
 }

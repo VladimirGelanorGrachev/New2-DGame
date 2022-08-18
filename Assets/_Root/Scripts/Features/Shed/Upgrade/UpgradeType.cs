@@ -4,7 +4,6 @@ namespace Features.Shed.Upgrade
     {
         None,
         Speed,
-        Jump,
-        Nitro
+        JumpHeight
     }
 }

@@ -20,6 +20,7 @@ namespace Services.IAP
         private PurchaseRestorer _purchaseRestorer;
         private IStoreController _controller;
 
+
         private void Awake() =>
             InitializeProducts();
 
@@ -34,6 +35,7 @@ namespace Services.IAP
             Log("Products initialized");
             UnityPurchasing.Initialize(this, builder);
         }
+
 
         void IStoreListener.OnInitialized(IStoreController controller, IExtensionProvider extensionsProvider)
         {
@@ -75,7 +77,7 @@ namespace Services.IAP
         private void OnPurchaseSucceed(UnityEngine.Purchasing.Product product)
         {
             string productId = product.definition.id;
-            decimal amount = (decimal)(product.definition.payout?.quantity ?? 1);
+            decimal amount = (decimal)(product.definition.payout?.quantity ?? 1); // payout будет null в редакторе
             string currency = product.metadata.isoCurrencyCode;
             ServiceRoster.Analytics.SendTransaction(productId, amount, currency);
 
@@ -104,6 +106,7 @@ namespace Services.IAP
             else
                 Error("RestorePurchases FAIL. Not initialized.");
         }
+
 
         private void Log(string message) => Debug.Log(WrapMessage(message));
         private void Error(string message) => Debug.LogError(WrapMessage(message));

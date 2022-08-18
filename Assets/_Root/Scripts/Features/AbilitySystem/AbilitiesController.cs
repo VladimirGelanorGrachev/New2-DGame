@@ -6,7 +6,9 @@ using Features.AbilitySystem.Abilities;
 namespace Features.AbilitySystem
 {
     internal interface IAbilitiesController
-    { }
+    {
+
+    }
 
     internal class AbilitiesController : BaseController, IAbilitiesController
     {
@@ -22,7 +24,7 @@ namespace Features.AbilitySystem
             [NotNull] IAbilityActivator activator)
         {
             _view
-                 = view ?? throw new ArgumentNullException(nameof(view));
+                = view ?? throw new ArgumentNullException(nameof(view));
 
             _repository
                 = repository ?? throw new ArgumentNullException(nameof(repository));
@@ -35,8 +37,10 @@ namespace Features.AbilitySystem
 
             _view.Display(items, OnAbilityViewClicked);
         }
+
         protected override void OnDispose() =>
-                    _view.Clear();
+            _view.Clear();
+
 
         private void OnAbilityViewClicked(string abilityId)
         {

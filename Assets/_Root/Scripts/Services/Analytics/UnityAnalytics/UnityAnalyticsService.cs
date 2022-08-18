@@ -11,6 +11,6 @@ namespace Services.Analytics.UnityAnalytics
             UnityEngine.Analytics.Analytics.CustomEvent(eventName, eventData);
 
         public void SendTransaction(string productId, decimal amount, string currency) =>
-           UnityEngine.Analytics.Analytics.Transaction(productId, amount, currency);
+            UnityEngine.Analytics.Analytics.Transaction(productId, amount, currency);
     }
 }

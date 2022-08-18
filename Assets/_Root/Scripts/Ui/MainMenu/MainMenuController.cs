@@ -17,7 +17,7 @@ namespace Ui
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
-            _view.Init(StartGame, OpenSettings, OpenShed, PlayRewardedAds, BuyProduct);
+            _view.Init(StartGame, OpenSettings, OpenShed, PlayRewardedAds, BuyProduct, OpenDailyReward, ExitGame);
 
             SubscribeAds();
             SubscribeIAP();
@@ -29,6 +29,7 @@ namespace Ui
             UnsubscribeIAP();
         }
 
+
         private MainMenuView LoadView(Transform placeForUi)
         {
             GameObject prefab = ResourcesLoader.LoadPrefab(_resourcePath);
@@ -39,19 +40,30 @@ namespace Ui
         }
 
         private void StartGame() =>
-             _profilePlayer.CurrentState.Value = GameState.Game;
+            _profilePlayer.CurrentState.Value = GameState.Game;
 
-        private void OpenSettings()=>
-             _profilePlayer.CurrentState.Value = GameState.Settings;
+        private void OpenSettings() =>
+            _profilePlayer.CurrentState.Value = GameState.Settings;
 
         private void OpenShed() =>
             _profilePlayer.CurrentState.Value = GameState.Shed;
 
         private void PlayRewardedAds() =>
-           ServiceRoster.AdsService.RewardedPlayer.Play();
+            ServiceRoster.AdsService.RewardedPlayer.Play();
 
         private void BuyProduct(string productId) =>
-           ServiceRoster.IAPService.Buy(productId);
+            ServiceRoster.IAPService.Buy(productId);
+
+        private void OpenDailyReward() =>
+            _profilePlayer.CurrentState.Value = GameState.DailyReward;
+
+        private void ExitGame()
+        {
+#if UNITY_EDITOR
+            UnityEditor.EditorApplication.isPlaying = false;
+#endif
+            Application.Quit();
+        }
 
         private void SubscribeAds()
         {

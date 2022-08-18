@@ -34,8 +34,10 @@ namespace Features.Inventory
             foreach (string itemId in _model.EquippedItems)
                 _view.Select(itemId);
         }
+
         protected override void OnDispose() =>
-           _view.Clear();             
+            _view.Clear();
+
 
         private void OnItemClicked(string itemId)
         {

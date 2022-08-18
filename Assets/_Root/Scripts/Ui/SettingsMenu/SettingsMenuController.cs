@@ -1,21 +1,24 @@
 using Profile;
 using Tool;
 using UnityEngine;
+using Object = UnityEngine.Object;
 
 namespace Ui
 {
     internal class SettingsMenuController : BaseController
     {
-        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/Settings");
+        private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/Ui/SettingsMenu");
         private readonly ProfilePlayer _profilePlayer;
         private readonly SettingsMenuView _view;
 
-        internal SettingsMenuController(Transform placeForUi, ProfilePlayer profilePlayer)
+
+        public SettingsMenuController(Transform placeForUi, ProfilePlayer profilePlayer)
         {
             _profilePlayer = profilePlayer;
             _view = LoadView(placeForUi);
             _view.Init(BackToMenu);
         }
+
 
         private SettingsMenuView LoadView(Transform placeForUi)
         {

@@ -1,4 +1,5 @@
 using UnityEngine;
+using JoostenProductions;
 using UnityStandardAssets.CrossPlatformInput;
 
 namespace Game.InputLogic
@@ -6,6 +7,7 @@ namespace Game.InputLogic
     internal class InputJoystickView : BaseInputView
     {
         [SerializeField] private float _inputMultiplier = 10;
+
 
         protected override void Move()
         {
@@ -20,5 +22,5 @@ namespace Game.InputLogic
             else if (sign < 0)
                 OnLeftMove(abs);
         }
-    }   
+    }
 }
