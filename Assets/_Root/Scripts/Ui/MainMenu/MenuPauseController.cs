@@ -6,7 +6,7 @@ namespace Ui
 { 
 internal class MenuPauseController : BaseController
 {
-    private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/UI/MenuPauseView");
+    private readonly ResourcePath _resourcePath = new ResourcePath("Prefabs/UI/PauseMenu");
 
     private readonly MenuPauseView _view;
     private readonly ProfilePlayer _profilePlayer;

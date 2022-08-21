@@ -15,11 +15,23 @@ MonoBehaviour:
   m_GroupName: Default Local Group
   m_Data:
     m_SerializedData: []
-  m_GUID: abe356f0a448b52449aa5e87ef31f122
-  m_SerializeEntries: []
+  m_GUID: 358a0b338c3104c48b4c063f439d3419
+  m_SerializeEntries:
+  - m_GUID: dede5f4548992dd4ba1c9840a451ed31
+    m_Address: Assets/_Root/Sprites/SkySprite.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 24770088dedc9e84b97afaa1c612d506
+    m_Address: Assets/_Root/Sprites/SkyTileSprite.png
+    m_ReadOnly: 0
+    m_SerializedLabels: []
+  - m_GUID: 543bde297ea5c864b84df05fb997566e
+    m_Address: Assets/_Root/Prefabs/Image.prefab
+    m_ReadOnly: 0
+    m_SerializedLabels: []
   m_ReadOnly: 0
-  m_Settings: {fileID: 11400000, guid: a1d6f13a0b5d55e49a4ce52adc5488ee, type: 2}
+  m_Settings: {fileID: 11400000, guid: f2fd3f2671b0342c085196b05069e11a, type: 2}
   m_SchemaSet:
     m_Schemas:
-    - {fileID: 11400000, guid: afec870fc93ad484ea954d82da812244, type: 2}
-    - {fileID: 11400000, guid: 7001af80a5a4a814ab34d96984e5cd7a, type: 2}
+    - {fileID: 11400000, guid: a04ae351d25d24bdab6f5508d43ce6d9, type: 2}
+    - {fileID: 11400000, guid: 52362b1a41a6344b0b0adbf23f9a0d81, type: 2}
