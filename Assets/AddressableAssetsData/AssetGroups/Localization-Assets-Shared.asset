@@ -15,20 +15,14 @@ MonoBehaviour:
   m_GroupName: Localization-Assets-Shared
   m_Data:
     m_SerializedData: []
-  m_GUID: c7fe2c467df06fc47a6a563700255c59
+  m_GUID: 602d11dbd02e7084cad92239b80ac485
   m_SerializeEntries:
-  - m_GUID: 1317265bd367bf24c8c9252ba14c8797
-    m_Address: Assets/Samples/Localization/1.0.5/Smart Strings - Persistent Variables/String
-      Table/Gender Sample Shared Data.asset
-    m_ReadOnly: 1
-    m_SerializedLabels: []
-  - m_GUID: 27153e20147c06c4c8d1304d28104a87
-    m_Address: Assets/Samples/Localization/1.0.5/Smart Strings - Persistent Variables/String
-      Table/Global Variables Sample Shared Data.asset
+  - m_GUID: 3a69f6d6fe619441494d1b07d7c6d064
+    m_Address: Assets/_Root/Settings/Localization/Main Shared Data.asset
     m_ReadOnly: 1
     m_SerializedLabels: []
   m_ReadOnly: 1
-  m_Settings: {fileID: 11400000, guid: a1d6f13a0b5d55e49a4ce52adc5488ee, type: 2}
+  m_Settings: {fileID: 11400000, guid: f2fd3f2671b0342c085196b05069e11a, type: 2}
   m_SchemaSet:
     m_Schemas:
     - {fileID: 11400000, guid: 31e8bfca5ccf59e40acafa5b05eec869, type: 2}

@@ -6,7 +6,7 @@ namespace Profile
     [CreateAssetMenu(fileName = nameof(InitialProfilePlayer), menuName = "Configs/" + nameof(InitialProfilePlayer))]
     internal class InitialProfilePlayer : ScriptableObject
     {
-        [field: SerializeField] public GameState State { get; private set; }
+        [field: SerializeField] public GameState State { get; private set; }        
         [field: SerializeField] public InitialProfileCar Car { get; private set; }
     }
 

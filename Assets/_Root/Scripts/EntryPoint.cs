@@ -29,6 +29,6 @@ internal class EntryPoint : MonoBehaviour
         (
             initialProfilePlayer.Car.Speed,
             initialProfilePlayer.Car.JumpHeight,
-            initialProfilePlayer.State
+            initialProfilePlayer.State            
         );
 }

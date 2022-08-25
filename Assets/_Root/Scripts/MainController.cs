@@ -10,7 +10,7 @@ using Features.MenuControll;
 internal class MainController : BaseController
 {
     private readonly Transform _placeForUi;
-    private readonly ProfilePlayer _profilePlayer;
+    private readonly ProfilePlayer _profilePlayer;    
 
     private MainMenuController _mainMenuController;
     private SettingsMenuController _settingsMenuController;
@@ -19,8 +19,8 @@ internal class MainController : BaseController
     private FightController _fightController;
     private GameController _gameController;
     private BackToMenuController _backToMenuController;
-    private MenuPauseController _menuPauseController;
-
+    private MenuPauseController _menuPauseController;  
+   
     private ShedContext _shedContext;
 
 
@@ -31,14 +31,14 @@ internal class MainController : BaseController
 
         profilePlayer.CurrentState.SubscribeOnChange(OnChangeGameState);
         OnChangeGameState(_profilePlayer.CurrentState.Value);
+       
     }
 
     protected override void OnDispose()
     {
         DisposeChildObjects();
-        _profilePlayer.CurrentState.UnSubscribeOnChange(OnChangeGameState);
+        _profilePlayer.CurrentState.UnSubscribeOnChange(OnChangeGameState);        
     }
-
 
     private void OnChangeGameState(GameState state)
     {
@@ -71,6 +71,7 @@ internal class MainController : BaseController
                 break;
         }
     }
+       
 
     private void DisposeChildObjects()
     {

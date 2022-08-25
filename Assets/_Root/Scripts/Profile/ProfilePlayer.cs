@@ -7,7 +7,7 @@ namespace Profile
 {
     internal class ProfilePlayer
     {
-        public readonly SubscriptionProperty<GameState> CurrentState;
+        public readonly SubscriptionProperty<GameState> CurrentState;        
         public readonly CarModel CurrentCar;
         public readonly InventoryModel Inventory;
         public readonly CurrencyModel Currency;
@@ -20,7 +20,7 @@ namespace Profile
 
         public ProfilePlayer(float speedCar, float jumpHeightCar)
         {
-            CurrentState = new SubscriptionProperty<GameState>();
+            CurrentState = new SubscriptionProperty<GameState>();            
             CurrentCar = new CarModel(speedCar, jumpHeightCar);
             Inventory = new InventoryModel();
             Currency = new CurrencyModel();

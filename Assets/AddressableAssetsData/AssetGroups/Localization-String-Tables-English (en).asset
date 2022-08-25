@@ -15,15 +15,15 @@ MonoBehaviour:
   m_GroupName: Localization-String-Tables-English (en)
   m_Data:
     m_SerializedData: []
-  m_GUID: c5656482744a10546925aeb8b77581fb
+  m_GUID: aa818634ca9654c4ea9cacc1d48bb0ff
   m_SerializeEntries:
-  - m_GUID: 2819ab3aa1c55f5438561e94d1c17c10
-    m_Address: Global Variables Sample_en
+  - m_GUID: 19542cf616c894f25a21c1ba9527b57c
+    m_Address: Main_en
     m_ReadOnly: 1
     m_SerializedLabels:
     - Locale-en
   m_ReadOnly: 1
-  m_Settings: {fileID: 11400000, guid: a1d6f13a0b5d55e49a4ce52adc5488ee, type: 2}
+  m_Settings: {fileID: 11400000, guid: f2fd3f2671b0342c085196b05069e11a, type: 2}
   m_SchemaSet:
     m_Schemas:
     - {fileID: 11400000, guid: 0a9a18e4781c0924da5986f6239421bb, type: 2}
